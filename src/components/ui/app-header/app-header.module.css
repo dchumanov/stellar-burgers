@@ -11,7 +11,6 @@
 
 .menu_part_left {
   display: flex;
-  flex-basis: 35%;
 }
 
 .link {
@@ -27,7 +26,6 @@
 .link_position_last {
   display: flex;
   justify-content: flex-end;
-  flex-basis: 35%;
 }
 
 .logo {
