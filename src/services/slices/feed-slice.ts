@@ -5,25 +5,13 @@ import { TOrder } from '@utils-types';
 // Загружаем ВСЕ заказы (лента)
 export const fetchAllFeedsThunk = createAsyncThunk(
   'feeds/fetchAllFeeds',
-  async (_, { rejectWithValue }) => {
-    try {
-      return await getFeedsApi();
-    } catch (error: any) {
-      return rejectWithValue(error.message);
-    }
-  }
+  async () => await getFeedsApi()
 );
 
 // Загружаем заказ по номеру
 export const fetchOrderByNumberThunk = createAsyncThunk(
   'feeds/fetchOrderByNumber',
-  async (number: number, { rejectWithValue }) => {
-    try {
-      return await getOrderByNumberApi(number);
-    } catch (error: any) {
-      return rejectWithValue(error.message);
-    }
-  }
+  async (number: number) => await getOrderByNumberApi(number)
 );
 
 type TFeedsState = {

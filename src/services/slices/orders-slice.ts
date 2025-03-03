@@ -21,18 +21,14 @@ const initialState: TOrdersState = {
 
 export const orderBurgerThunk = createAsyncThunk(
   'orders/orderBurger',
-  async (items: TConstructorItems, { rejectWithValue }) => {
-    try {
-      let orderData: string[] = [];
-      if (items.bun && items.ingredients.length > 0) {
-        orderData.push(items.bun._id);
-        orderData.push(items.bun._id);
-        items.ingredients.forEach((item) => orderData.push(item._id));
-      }
-      return orderBurgerApi(orderData!);
-    } catch (error: any) {
-      return rejectWithValue(error.message);
+  async (items: TConstructorItems) => {
+    let orderData: string[] = [];
+    if (items.bun && items.ingredients.length > 0) {
+      orderData.push(items.bun._id);
+      orderData.push(items.bun._id);
+      items.ingredients.forEach((item) => orderData.push(item._id));
     }
+    return orderBurgerApi(orderData!);
   }
 );
 

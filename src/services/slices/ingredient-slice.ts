@@ -17,13 +17,7 @@ const initialState: IngredientsState = {
 // Загружаем ингредиенты с сервера
 export const getIngredientsThunk = createAsyncThunk(
   'ingredients/fetchIngredients',
-  async (_, { rejectWithValue }) => {
-    try {
-      return await getIngredientsApi();
-    } catch (error: any) {
-      return rejectWithValue(error.message);
-    }
-  }
+  async () => await getIngredientsApi()
 );
 
 export const ingredientsSlice = createSlice({
