@@ -2,17 +2,18 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getIngredientsApi } from '@api';
 import { TIngredient } from '@utils-types';
 
-export interface IngredientsState {
+export type IngredientsState = {
   ingredients: TIngredient[];
   isLoading: boolean;
   isError: string | null | undefined;
-}
+};
 
 const initialState: IngredientsState = {
   ingredients: [],
   isLoading: false,
   isError: null
 };
+export { initialState as ingredientsInitialState };
 
 export const getIngredientsThunk = createAsyncThunk(
   'ingredients/fetchIngredients',

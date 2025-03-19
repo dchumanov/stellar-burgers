@@ -13,7 +13,7 @@ export type TConstructorItemsState = {
   constructorItems: TConstructorItems;
 };
 
-export const initialState: TConstructorItemsState = {
+const initialState: TConstructorItemsState = {
   loading: true,
   error: null,
   constructorItems: {
@@ -21,6 +21,7 @@ export const initialState: TConstructorItemsState = {
     ingredients: []
   }
 };
+export { initialState as constructorInitialState };
 
 export const constructorItemsSlice = createSlice({
   name: 'constructorItems',

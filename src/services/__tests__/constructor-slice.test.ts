@@ -1,9 +1,9 @@
 import {
   addConstructorItem,
   constructorItemsReducer,
-  initialState,
   moveUpConstructorItem,
-  removeConstructorItem
+  removeConstructorItem,
+  constructorInitialState
 } from '@slices';
 
 import { expect, describe, test } from '@jest/globals';
@@ -36,7 +36,8 @@ describe('Тест редьюсера constructorItemSlice', () => {
         calories: 643,
         price: 988,
         image: 'https://code.s3.yandex.net/react/code/meat-03.png',
-        image_mobile: 'https://code.s3.yandex.net/react/code/meat-03-mobile.png',
+        image_mobile:
+          'https://code.s3.yandex.net/react/code/meat-03-mobile.png',
         image_large: 'https://code.s3.yandex.net/react/code/meat-03-large.png',
         __v: 0,
         id: '06749e33-2558-4274-acfe-7a25cc83d5ec'
@@ -66,7 +67,8 @@ describe('Тест редьюсера constructorItemSlice', () => {
         calories: 14,
         price: 80,
         image: 'https://code.s3.yandex.net/react/code/sauce-04.png',
-        image_mobile: 'https://code.s3.yandex.net/react/code/sauce-04-mobile.png',
+        image_mobile:
+          'https://code.s3.yandex.net/react/code/sauce-04-mobile.png',
         image_large: 'https://code.s3.yandex.net/react/code/sauce-04-large.png',
         __v: 0,
         id: '9177249c-bacc-4a89-b4dd-31c7f7e02272'
@@ -84,14 +86,16 @@ describe('Тест редьюсера constructorItemSlice', () => {
     calories: 986,
     price: 300,
     image: 'https://code.s3.yandex.net/react/code/mineral_rings.png',
-    image_mobile: 'https://code.s3.yandex.net/react/code/mineral_rings-mobile.png',
-    image_large: 'https://code.s3.yandex.net/react/code/mineral_rings-large.png',
+    image_mobile:
+      'https://code.s3.yandex.net/react/code/mineral_rings-mobile.png',
+    image_large:
+      'https://code.s3.yandex.net/react/code/mineral_rings-large.png',
     __v: 0,
     id: 'ac403fd4-e1f4-4021-a43b-0791e5a100f7'
   };
 
   const testInitialState = {
-    ...initialState,
+    ...constructorInitialState,
     constructorItems: testConstructorItems
   };
 
